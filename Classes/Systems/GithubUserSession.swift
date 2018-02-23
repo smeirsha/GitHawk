@@ -38,7 +38,7 @@ final class GithubUserSession: NSObject, NSCoding {
         self.token = token
         self.authMethod = authMethod
         self.username = username
-        self.enterpriseURL = enterpriseURL
+        self.enterpriseURL = "https://source.xing.com/"
     }
 
     // MARK: NSCoding

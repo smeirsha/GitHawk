@@ -210,33 +210,33 @@ struct GithubClient {
         })
     }
 
-    static func url(baseURL: String = "https://github.com/", path: String) -> URL? {
+    static func url(baseURL: String = "https://source.xing.com/", path: String) -> URL? {
         return URL(string: "\(baseURL)\(path)")
     }
 
     // MARK: Private
     private func constructURL(from request: Request) -> String {
-        let baseURL: String
-        if let enterpriseURL = userSession?.enterpriseURL {
+        var baseURL: String
+
             switch request.type {
             case .api:
-                baseURL = "\(enterpriseURL)api/v3"
+                baseURL = "https://source.xing.com/api/v3/"
             case .site:
-                baseURL = enterpriseURL
+                baseURL = "https://source.xing.com/"
             case .status:
                 assert(false, "Status checking is unsupported in GitHub Enterprise")
                 baseURL = "invalid-url"
             }
-        } else {
-            switch request.type {
-            case .api:
-                baseURL = "https://api.github.com/"
-            case .site:
-                baseURL = "https://github.com/"
-            case .status:
-                baseURL = "https://status.github.com/api/"
-            }
-        }
+//        } else {
+//            switch request.type {
+//            case .api:
+//                baseURL = "https://api.github.com/"
+//            case .site:
+//                baseURL = "https://github.com/"
+//            case .status:
+//                baseURL = "https://status.github.com/api/"
+//            }
+
 
         return "\(baseURL)\(request.path)"
     }
