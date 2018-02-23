@@ -242,11 +242,11 @@ struct GithubClient {
     }
 
     private var graphQLEndpoint: String {
-        if let enterpriseURL = userSession?.enterpriseURL {
-            return "\(enterpriseURL)/api/graphql"
-        } else {
-            return "https://api.github.com/graphql"
-        }
+//        if let enterpriseURL = userSession?.enterpriseURL {
+            return "https://source.xing.com/api/graphql"
+//        } else {
+//            return "https://api.github.com/graphql"
+//        }
     }
 
 }
