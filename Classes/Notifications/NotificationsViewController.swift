@@ -17,7 +17,8 @@ RatingSectionControllerDelegate,
 PrimaryViewController,
 TabNavRootViewControllerType,
 BaseListViewControllerDataSource,
-FlatCacheListener {
+FlatCacheListener,
+UIViewControllerPreviewingDelegate {
 
     enum InboxType {
         case unread
@@ -77,6 +78,10 @@ FlatCacheListener {
         }
 
         navigationController?.tabBarItem.badgeColor = Styles.Colors.Red.medium.color
+
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        }
     }
 
     // MARK: Private API
@@ -334,6 +339,21 @@ FlatCacheListener {
 
     func flatCacheDidUpdate(cache: FlatCache, update: FlatCache.Update) {
         self.update(animated: trueUnlessReduceMotionEnabled)
+    }
+
+    // MARK: UIViewControllerPreviewingDelegate
+
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = feed.adapter.collectionView?.indexPathForItem(at: location), let cell = feed.adapter.collectionView?.cellForItem(at: indexPath) else { return nil }
+//        let viewController =
+
+        feed.adapter.object(atSection: <#T##Int#>)
+        previewingContext.sourceRect = cell.frame
+        return nil
+    }
+
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        //
     }
 
 }

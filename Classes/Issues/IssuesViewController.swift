@@ -80,7 +80,7 @@ final class IssuesViewController:
             target: self,
             action: #selector(IssuesViewController.onMore(sender:))
         )
-        rightItem.accessibilityLabel = NSLocalizedString("Share", comment: "")
+        rightItem.accessibilityLabel = Constants.Strings.share
         return rightItem
     }
 
@@ -223,6 +223,20 @@ final class IssuesViewController:
         )
     }
 
+    override var previewActionItems: [UIPreviewActionItem] {
+        let shareHandler: (UIPreviewAction, UIViewController) -> Void = { [weak self] _, viewController in
+            guard let strongSelf = self else { return }
+            viewController.present(
+                strongSelf.shareActivityController(),
+                animated: trueUnlessReduceMotionEnabled
+            )
+        }
+        return [
+            UIPreviewAction(title: Constants.Strings.share, style: .default, handler: shareHandler),
+            UIPreviewAction(title: NSLocalizedString("Mark Read", comment: ""), style: .default, handler: { _, _ in fatalError("Implement me") })
+        ]
+    }
+
     func configureNavigationItems() {
         var items = [moreOptionsItem]
         if let bookmarkItem = bookmarkNavController?.navigationItem {
@@ -252,11 +266,15 @@ final class IssuesViewController:
             .view(client: client, repo: repo)
     }
 
-    @objc func onMore(sender: UIBarButtonItem) {
-        let activityController = UIActivityViewController(
+    func shareActivityController() -> UIActivityViewController {
+        return UIActivityViewController(
             activityItems: [externalURL],
             applicationActivities: [TUSafariActivity()]
         )
+    }
+
+    @objc func onMore(sender: UIBarButtonItem) {
+        let activityController = shareActivityController()
         activityController.popoverPresentationController?.barButtonItem = sender
         present(activityController, animated: trueUnlessReduceMotionEnabled)
     }
