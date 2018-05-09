@@ -458,13 +458,6 @@
 			remoteGlobalIDString = 294EE4C4209006C2002C9CB1;
 			remoteInfo = "FreetimeWatch Extension";
 		};
-		294EE4D3209006C3002C9CB1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 297AE82C1EC0D58A00B44A1F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 294EE4B8209006BF002C9CB1;
-			remoteInfo = FreetimeWatch;
-		};
 		297AE8491EC0D58A00B44A1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 297AE82C1EC0D58A00B44A1F /* Project object */;
@@ -2119,7 +2112,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				294EE4D4209006C3002C9CB1 /* PBXTargetDependency */,
 			);
 			name = Freetime;
 			productName = Freetime;
@@ -3082,11 +3074,6 @@
 			target = 294EE4C4209006C2002C9CB1 /* FreetimeWatch Extension */;
 			targetProxy = 294EE4C7209006C2002C9CB1 /* PBXContainerItemProxy */;
 		};
-		294EE4D4209006C3002C9CB1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 294EE4B8209006BF002C9CB1 /* FreetimeWatch */;
-			targetProxy = 294EE4D3209006C3002C9CB1 /* PBXContainerItemProxy */;
-		};
 		297AE84A1EC0D58A00B44A1F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 297AE8331EC0D58A00B44A1F /* Freetime */;
@@ -3398,8 +3385,8 @@
 				CODE_SIGN_ENTITLEMENTS = Freetime.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+        CODE_SIGN_STYLE = Automatic;
+        DEVELOPMENT_TEAM = 523C4DWBTH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3422,10 +3409,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies -Onone -Xfrontend -warn-long-function-bodies=200 -Xfrontend -warn-long-expression-type-checking=200";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime;
+        PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+        PROVISIONING_PROFILE = "";
+        PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Resources/Freetime-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -3441,8 +3428,8 @@
 				CODE_SIGN_ENTITLEMENTS = Freetime.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+        CODE_SIGN_STYLE = Automatic;
+        DEVELOPMENT_TEAM = 523C4DWBTH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3465,7 +3452,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime;
+        PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3569,8 +3556,8 @@
 				CODE_SIGN_ENTITLEMENTS = Freetime.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
+        CODE_SIGN_STYLE = Automatic;
+        DEVELOPMENT_TEAM = 523C4DWBTH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3599,7 +3586,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime;
+        PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.freetime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
